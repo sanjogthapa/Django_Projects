@@ -1,0 +1,40 @@
+{% extends 'includes/base.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Teacher</th>
+            <th>Date of Submission</th>
+            <th>Edit Tutorials</th>
+            <th>Delete Tutorials</th>
+            <th>Details Tutorials</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for tutorial in tutorials %}
+        <tr>
+            <td>{{tutorial.subject}}</td>
+            <td>{{tutorial.teacher}}</td>
+            <td>{{tutorial.date_submission}}</td>
+            <td>
+                <a href="{% url 'sms:edit_tutorials' id=tutorial.id %}">
+                    <button class="btn btn-warning">
+                        Edit Tutorials</button>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'sms:delete_tutorials' id=tutorial.id %}">
+                    <button class="btn btn-danger">
+                        Delete Tutorials</button>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

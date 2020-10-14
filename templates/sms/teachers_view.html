@@ -1,0 +1,38 @@
+{% extends 'includes/base.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>English</th>
+            <th>Maths</th>
+            <th>Science</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Detail</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for teacher in teachers %}
+        <tr>
+            <td>{{teacher.english}}</td>
+            <td>{{teacher.maths}}</td>
+            <td>{{teacher.science}}</td>
+            <td><a href="{% url 'sms:updateteacher_generic' pk=teacher.id %}">
+                <button class="btn btn-warning">Edit</button>
+
+            </a>
+            </td>
+            <td><a href="{% url 'sms:delete_teacher' pk=teacher.id %}">
+                    <button class="btn btn-danger">Delete</button> </a>
+                    </td>
+            <td><a href="{% url 'sms:detail_teacher' pk=teacher.id %}">
+                    <button class="btn btn-dark">Detail</button> </a>
+                    </td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

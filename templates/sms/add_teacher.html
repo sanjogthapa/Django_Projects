@@ -1,0 +1,14 @@
+{% extends 'includes/base.html' %}
+
+{% block content %}
+
+    <form action="/sms/add_teacher/" method="POST">
+        {% csrf_token %}
+        English: <input type="text" name="english"><br> <br>
+        Maths: <input type="text" name="maths"> <br> <br>
+        Science: <input type="text" name="science"><br> <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+
+
+{% endblock %}

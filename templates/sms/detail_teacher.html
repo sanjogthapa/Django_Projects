@@ -1,0 +1,14 @@
+{% extends 'includes/base.html' %}
+
+{% block content %}
+
+    <h1>{{teachers.english}}</h1>
+    <h1>{{teachers.maths}}</h1>
+    <h1>{{teachers.science}}</h1>
+    <a href="{% url 'sms:teachers_view' %}"><button class="btn btn-light">
+        << go back to teachers page
+    </button></a>
+
+
+{% endblock %}
+

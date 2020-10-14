@@ -1,0 +1,12 @@
+{% extends 'includes/base.html' %}
+
+{% block content%}
+<form action="#" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{books_form.as_p }}
+    <button type="submit" class="btn btn-success">Submit</button>
+
+</form>
+
+
+{% endblock %}

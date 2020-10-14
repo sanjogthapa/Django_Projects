@@ -1,0 +1,10 @@
+{% extends 'includes/base.html' %}
+
+
+{% block content %}
+<form action="#" method="POST">
+{% csrf_token %}
+{{ form_tutorials.as_p }}
+<button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% endblock %}
